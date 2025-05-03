@@ -1,0 +1,349 @@
+:root {
+    --primary: #4361ee;
+    --primary-dark: #3a56d4;
+    --secondary: #4cc9f0;
+    --success: #4ade80;
+    --danger: #f75555;
+    --warning: #f59e0b;
+    --light: #f8fafc;
+    --dark: #1e293b;
+    --gray: #64748b;
+    --border-radius: 12px;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: 100vh;
+    background-color: #f1f5f9;
+}
+
+.sidebar {
+    background: white;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.main-content {
+    padding: 2rem;
+}
+
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.dashboard-title {
+    font-size: 1.75rem;
+    color: var(--dark);
+    font-weight: 700;
+}
+
+.dashboard-title span {
+    color: var(--primary);
+}
+
+.user-greeting {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 1.5rem;
+}
+
+
+.stats-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.stats-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--dark);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.stat-label {
+    color: var(--gray);
+    font-size: 0.875rem;
+}
+
+
+.progress-circle {
+    width: 120px;
+    height: 120px;
+    margin: 1rem auto;
+    position: relative;
+}
+
+.progress-circle svg {
+    width: 100%;
+    height: 100%;
+}
+
+.progress-bg {
+    fill: none;
+    stroke: #e2e8f0;
+    stroke-width: 6;
+}
+
+.progress-fill {
+    fill: none;
+    stroke: var(--primary);
+    stroke-width: 6;
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    transition: var(--transition);
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+
+.goals-container {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.table-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.goals-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.goals-table th {
+    background-color: var(--primary);
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 500;
+}
+
+.goals-table th:first-child {
+    border-top-left-radius: var(--border-radius);
+}
+
+.goals-table th:last-child {
+    border-top-right-radius: var(--border-radius);
+}
+
+.goals-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: middle;
+}
+
+.goals-table tr:last-child td {
+    border-bottom: none;
+}
+
+
+.status-badge {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.badge-completed {
+    background-color: rgba(74, 222, 128, 0.1);
+    color: var(--success);
+}
+
+.badge-pending {
+    background-color: rgba(247, 85, 85, 0.1);
+    color: var(--danger);
+}
+
+
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-btn {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.action-btn:hover {
+    transform: scale(1.1);
+}
+
+.btn-complete {
+    color: var(--success);
+}
+
+.btn-edit {
+    color: var(--warning);
+}
+
+.btn-delete {
+    color: var(--danger);
+}
+
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625rem 1.25rem;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-icon {
+    margin-right: 0.5rem;
+}
+
+
+@media (max-width: 768px) {
+    .dashboard-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar {
+        height: auto;
+        position: static;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .goals-table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+.goal-form-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.form-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn-cancel {
+    background-color: var(--light);
+    color: var(--gray);
+}
+
+.btn-cancel:hover {
+    background-color: #e2e8f0;
+}
